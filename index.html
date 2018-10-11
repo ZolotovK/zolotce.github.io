@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/media.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <script src="wow.min.js"></script>
@@ -29,18 +29,26 @@
     gtag('js', new Date());
     gtag('config', 'UA-113650233-1');
   </script>
-  <div class="main">
+  <ul class="m-menu">
+    <li class="close-menu">&times;</li>
+    <li><a href="index.html#top" class="menu-link-mobile">Главная</a></li>
+    <li><a href="index.html#go-price" class="menu-link-mobile">Цены</a></li>
+    <li><a href="index.html#go-donate" class="get-started-btn-mobile menu-link-mobile">Donate</a></li>
+  </ul>
+  <div class="main" id="top">
     <div class="main-overlay"></div>
     <div class="header">
       <div class="logo wow fadeInLeft">
         <img src="image/Alien.png" alt="Logo"> ZOLOTCE
       </div>
+      <a class="m-menu-link">
+        <i class="fa fa-bars"></i>
+      </a>
       <div class="menu visible-lg">
         <ul>
           <li><a href="#" class="menu-link link-line-first">Главная</a></li>
           <li><a href="#go-price" class="menu-link link-line">Цены</a></li>
-          <li><a href="#go-analytics" class="get-started-btn menu-link">Donate</a></li>
-          <!-- <li><a href="#" class="get-started-btn menu-link">Sign in</a></li> -->
+          <li><a href="#go-donate" class="get-started-btn menu-link">Donate</a></li>
         </ul>
       </div>
     </div>
@@ -89,7 +97,7 @@
     </div>
   </div>
 </div>
-<div class="call-to-action" id="go-analytics">
+<div class="call-to-action" id="go-donate">
   <div class="call-to-action-overlay"></div>
   <div class="wrap">
   <span>Поддержать</span>
@@ -119,9 +127,6 @@
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
-  <!-- <script>
-    alert('Сайт в разработке');
-  </script> -->
 
   <script>
     $('a[href^="#"]').click(function() {
@@ -135,7 +140,7 @@
 </script>
 
 <div id="contes">
-       <div id="progress"></div>
+  <div id="progress"></div>
 </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    <script>
@@ -145,5 +150,21 @@
            $("#progress").width (ratio + "%")
        });
    </script>
+
+   <script>
+    $(function() {
+      var link = $('.m-menu-link');
+      var close = $('.close-menu');
+      var menu = $('.m-menu');
+      link.on('click', function(event) {
+        event.preventDefault();
+        menu.toggleClass('m-menu__active');
+      });
+      close.on('click', function(event) {
+        event.preventDefault();
+        menu.toggleClass('m-menu__active');
+      });
+    });
+  </script>
 </body>
 </html>
