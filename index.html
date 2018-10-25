@@ -125,11 +125,9 @@
     <p>© 2018 ZOLOTCE prod. This site is a test.</p>
   </div>
 </div>
-
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
-
   <script async>
     $('a[href^="#"]').click(function() {
       elementClick = $(this).attr("href");
@@ -140,7 +138,6 @@
       return false;
 });
 </script>
-
 <div id="contes">
   <div id="progress"></div>
 </div>
@@ -152,7 +149,6 @@
            $("#progress").width (ratio + "%")
        });
    </script>
-
    <script async>
     $(function() {
       var link = $('.m-menu-link');
@@ -168,7 +164,6 @@
       });
     });
   </script>
-
   <script src="js/sweetalert2.all.min.js"></script>
   <script>
     $('#myBtn-vip').click(function(e) {
@@ -181,9 +176,18 @@
   {
     title: 'VIP',
     text: 'Введите свое имя',
+    inputPlaceholder: 'Имя',
   },
-  'Введите свою фамилию',
-  'Введите свою почту'
+  {
+    title: 'VIP',
+    text: 'Введите свою фамилию',
+    inputPlaceholder: 'Фамилия',
+  },
+  {
+    title: 'VIP',
+    text: 'Введите свою почту',
+    inputPlaceholder: 'example@mail.com',
+  },
 ]).then((result) => {
   if (result.value) {
     swal(
@@ -201,7 +205,6 @@
 })
     });
   </script>
-
   <script>
     $('#myBtn-standart').click(function(e) {
       swal.mixin({
@@ -213,9 +216,18 @@
   {
     title: 'STANDART',
     text: 'Введите свое имя',
+    inputPlaceholder: 'Имя',
   },
-  'Введите свою фамилию',
-  'Введите свою почту'
+  {
+    title: 'STANDART',
+    text: 'Введите свою фамилию',
+    inputPlaceholder: 'Фамилия',
+  },
+  {
+    title: 'STANDART',
+    text: 'Введите свою почту',
+    inputPlaceholder: 'example@mail.com',
+  },
 ]).then((result) => {
   if (result.value) {
     swal(
@@ -233,7 +245,6 @@
 })
     });
   </script>
-
   <script>
     $('#myBtn-premium').click(function(e) {
       swal.mixin({
@@ -245,9 +256,18 @@
   {
     title: 'PREMIUM',
     text: 'Введите свое имя',
+    inputPlaceholder: 'Имя',
   },
-  'Введите свою фамилию',
-  'Введите свою почту'
+  {
+    title: 'PREMIUM',
+    text: 'Введите свою фамилию',
+    inputPlaceholder: 'Фамилия',
+  },
+  {
+    title: 'PREMIUM',
+    text: 'Введите свою почту',
+    inputPlaceholder: 'example@mail.com',
+  },
 ]).then((result) => {
   if (result.value) {
     swal(
