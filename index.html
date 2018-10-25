@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <link rel="SHORTCUT ICON" href="image/favicon.ico" type="image/ico">
-  <script src="wow.min.js"></script>
+  <script src="js/wow.min.js"></script>
               <script>
               new WOW().init();
               </script>
@@ -48,7 +48,7 @@
       </a>
       <div class="menu visible-lg">
         <ul>
-          <li><a href="#top" class="menu-link link-line-first">Главная</a></li>
+          <li><a href="#" class="menu-link link-line-first">Главная</a></li>
           <li><a href="#go-price" class="menu-link link-line">Цены</a></li>
           <li><a href="#go-donate" class="get-started-btn menu-link">Donate</a></li>
         </ul>
@@ -79,7 +79,7 @@
       <h4>1.<sub>299</sub> <i class="fa fa-rub"></i></h4>
       <p>В данную услугу входит: <br> создание UX/UI дизайна, PSD макет, верстка сайта с помощью flexbox/grid/bootstrap, установка на хостинг.<br />
          Время выполнения работы: от 2 до 5 дней. </p>
-      <button class="price-btn">выбрать</button>
+      <button class="price-btn" id="myBtn-standart">выбрать</button>
     </div>
     <div class="price-tag wow jackInTheBox">
       <img src="image/table/tab1.png" alt="price-vip">
@@ -87,7 +87,7 @@
       <h4>3.<sub>399</sub> <i class="fa fa-rub"></i></h4>
       <p>В данную услугу входит: <br> Услуга STANDART <br />
          адаптивность сайта под все устройства <br /> логика сайта с помощью Js. <br> Время выполнения работы: от 7 до 12 дней. </p>
-      <button class="price-btn">выбрать</button>
+      <button class="price-btn" id="myBtn-vip">выбрать</button>
     </div>
     <div class="price-tag wow bounceIn">
       <img src="image/table/tab3.png" alt="price-premium">
@@ -95,7 +95,7 @@
       <h4>9.<sub>199</sub> <i class="fa fa-rub"></i></h4>
       <p>В данную услугу входит: <br /> Услуга STANDRAT + VIP <br /> Создание сложного приложение на React & Vue. <br />
          Выбор библиотеки или фреймворка зависит от Вас. <br /> Время выполнения работы: от 20 до 35 дней.</p>
-      <button class="price-btn">выбрать</button>
+      <button class="price-btn" id="myBtn-premium">выбрать</button>
     </div>
   </div>
 </div>
@@ -110,7 +110,7 @@
 <div class="footer-wrap">
   <div class="footer">
     <div class="logo-footer wow zoomIn">
-      <img src="image/Alien.png" alt="logo"> ZOLOTCE
+      <img src="image/Alien.png" height="40" width="40" alt="logo"> ZOLOTCE
     </div>
     <div class="social-links wow zoomIn">
       <a href="http://t.me/ZolotovK" class="ln1" target="_blank"><i class="fa fa-telegram"></i></a>
@@ -166,6 +166,103 @@
         event.preventDefault();
         menu.toggleClass('m-menu__active');
       });
+    });
+  </script>
+
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script>
+    $('#myBtn-vip').click(function(e) {
+      swal.mixin({
+  input: 'text',
+  confirmButtonText: 'Продолжить',
+  showCancelButton: true,
+  progressSteps: ['1', '2', '3']
+}).queue([
+  {
+    title: 'VIP',
+    text: 'Введите свое имя',
+  },
+  'Введите свою фамилию',
+  'Введите свою почту'
+]).then((result) => {
+  if (result.value) {
+    swal(
+      'Заявка отправлена!',
+      'Ваша заявка на проверке',
+      'success'
+    )
+  }  else {
+    swal(
+      'Неверный ввод данных!',
+      '',
+      'error'
+    )
+  }
+})
+    });
+  </script>
+
+  <script>
+    $('#myBtn-standart').click(function(e) {
+      swal.mixin({
+  input: 'text',
+  confirmButtonText: 'Продолжить',
+  showCancelButton: true,
+  progressSteps: ['1', '2', '3']
+}).queue([
+  {
+    title: 'STANDART',
+    text: 'Введите свое имя',
+  },
+  'Введите свою фамилию',
+  'Введите свою почту'
+]).then((result) => {
+  if (result.value) {
+    swal(
+      'Заявка отправлена!',
+      'Ваша заявка на проверке',
+      'success'
+    )
+  }  else {
+    swal(
+      'Неверный ввод данных!',
+      '',
+      'error'
+    )
+  }
+})
+    });
+  </script>
+
+  <script>
+    $('#myBtn-premium').click(function(e) {
+      swal.mixin({
+  input: 'text',
+  confirmButtonText: 'Продолжить',
+  showCancelButton: true,
+  progressSteps: ['1', '2', '3']
+}).queue([
+  {
+    title: 'PREMIUM',
+    text: 'Введите свое имя',
+  },
+  'Введите свою фамилию',
+  'Введите свою почту'
+]).then((result) => {
+  if (result.value) {
+    swal(
+      'Заявка отправлена!',
+      'Ваша заявка на проверке',
+      'success'
+    )
+  }  else {
+    swal(
+      'Неверный ввод данных!',
+      '',
+      'error'
+    )
+  }
+})
     });
   </script>
 </body>
