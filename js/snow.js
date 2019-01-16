@@ -592,7 +592,7 @@ onResize( w, h, dpi ) {
       1,
       1,
       1,
-      0.1 + Math.random() * 0.2
+      0.1 + Math.random() * 0.6
     )
 
     size.push(
